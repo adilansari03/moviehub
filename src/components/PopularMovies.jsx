@@ -30,14 +30,28 @@ const PopularMovies = () => {
   };
 
   return (
-    <section className="w-full md:py-[70px]">
-      <div className="container px-20 mx-auto mb-8">
+    <section className="w-full popular-mov md:py-[70px] py-[50px]">
+      <div className="container md:px-20 px-5 mx-auto mb-8">
         <h2 className="section-title text-white text-[28px] font-medium flex items-center gap-2">
-          <FaArrowTrendUp /> Trends Now
+          <FaArrowTrendUp className="text-[red]" /> Trends Now
         </h2>
       </div>
       <div className="w-full">
-        <Swiper modules={[Pagination]} spaceBetween={20} slidesPerView={7.5}>
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={20}
+          breakpoints={{
+            300: {
+              slidesPerView: 2.5,
+            },
+            768: {
+              slidesPerView: 4.5,
+            },
+            1280: {
+              slidesPerView: 7.5,
+            },
+          }}
+        >
           {popularMovies?.map((movie) => (
             <SwiperSlide key={movie.id}>
               <Card
@@ -70,9 +84,11 @@ const Card = ({ data, imageUrl, title, rating, date }) => {
       <img
         src={imageUrl}
         alt=""
-        className="aspect-[9/12] rounded-[10px] object-cover mb-3"
+        className="md:aspect-[9/12] rounded-[10px] object-cover mb-3"
       />
-      <h3 className="text-white text-[16px] mb-2">{truncateText(title, 22)}</h3>
+      <h3 className="text-white text-[16px] mb-2 md:line-clamp-2 line-clamp-1">
+        {truncateText(title, 22)}
+      </h3>
       <div className="flex items-center justify-between">
         <div className="date text-[#6f6f6f] text-[12px]">{date}</div>
         <div className="rating flex items-center gap-2 text-[yellow] text-[12px]">
