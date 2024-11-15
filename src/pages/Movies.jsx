@@ -57,8 +57,8 @@ const Movies = () => {
         </div>
       </section>
 
-      <section className="w-full bg-[#f0f0f0] mt-[-100px] rounded-t-[50px] px-24 py-24">
-        <div className="search relative mb-16">
+      <section className="w-full bg-[#f0f0f0] mt-[-100px] md:rounded-t-[50px] rounded-[30px] md:px-24 px-5 md:py-24 py-12">
+        <div className="search relative md:mb-16 mb-12">
           <CiSearch className="absolute top-2 left-3 text-2xl" />
           <input
             className="border px-3 py-2 ps-12 w-full rounded-[20px]"
@@ -104,7 +104,7 @@ const Movies = () => {
 
 const MovieList = ({ movieList, truncateText }) => {
   return (
-    <div className="grid grid-cols-5 gap-4">
+    <div className="grid md:grid-cols-5 grid-cols-2 gap-4">
       {movieList?.map((movie) => (
         <Link to={`/movie-details/${movie?.id}`} key={movie.id}>
           <img

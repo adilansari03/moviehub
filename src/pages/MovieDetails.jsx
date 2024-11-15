@@ -41,7 +41,7 @@ const MovieDetails = () => {
       )}
       {!isLoading && (
         <section
-          className="w-full h-screen relative banner1 flex items-center justify-center"
+          className="w-full md:h-screen relative banner1 flex items-center justify-center"
           style={{
             backgroundImage: movieDetails
               ? `url(https://image.tmdb.org/t/p/w500${movieDetails?.backdrop_path})`
@@ -50,17 +50,18 @@ const MovieDetails = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="w-full container px-12 mx-auto flex justify-center items-center">
-            <div className="w-full flex justify-center items-center relative z-10">
-              <div className="w-[40%]">
+          <div className="w-full container md:px-12 md:py-0 py-5 pt-20 px-5 mx-auto flex justify-center items-center ">
+            <div className="w-full flex justify-center items-center relative z-10 md:flex-row flex-col gap-10">
+              <div className="md:w-[40%]">
                 {movieDetails && (
                   <img
+                    className="md:rounded-none rounded-[15px]"
                     src={`https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}`}
                     alt={movieDetails?.title}
                   />
                 )}
               </div>
-              <div className="w-[35%] text-white">
+              <div className="md:w-[35%] text-white">
                 {movieDetails && (
                   <>
                     <span className="flex items-center gap-2 text-[#ffc400]">

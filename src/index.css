@@ -65,3 +65,7 @@ input:focus-visible {
   outline: none;
   border: 1px solid #c50000;
 }
+
+.popular-mov .swiper-slide:first-child {
+  margin-left: 20px;
+}

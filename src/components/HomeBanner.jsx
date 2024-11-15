@@ -76,13 +76,13 @@ const BannerCard = ({
     >
       <div className="flex items-center justify-between  relative z-[2]">
         <div className="banner-content md:w-[50%]">
-          <span className="bg-[red] text-white px-3 py-1 text-sm rounded-full">
+          <span className="bg-[red] text-white px-3 py-1 md:text-sm text-[12px] rounded-full">
             Rating / {rating}
           </span>
-          <h1 className="md:text-[52px] text-[42px] text-white my-3">
+          <h1 className="md:text-[52px] text-[32px] text-white md:my-3 my-5 line-clamp-3 md:leading-[49px] leading-[30px]">
             {title}
           </h1>
-          <p className="text-white mb-5">{desc}</p>
+          <p className="text-white mb-5 md:text-[16px] text-[15px]">{desc}</p>
           <Link
             to={`movie-details/${data?.id}`}
             className="bg-[red] px-8 py-3 text-white rounded-full w-[140px] flex items-center gap-2"
@@ -90,7 +90,7 @@ const BannerCard = ({
             <FaPlay /> Watch
           </Link>
         </div>
-        <div className="poster w-10%">
+        <div className="poster w-10% md:block hidden">
           <img
             className="w-full aspect-[3/3] object-cover rounded-[30px]"
             src={posterUrl}
